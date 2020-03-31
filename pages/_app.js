@@ -14,6 +14,7 @@ class MyApp extends App {
     const themeKey = process.env.THEME_APP || "light";
 
     const themeApp = themeSelector(themeKey);
+
     return { ...appProps, themeApp };
   }
 
