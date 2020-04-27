@@ -14,13 +14,13 @@ module.exports = () => {
 
   // fix: prevents error when .less files are required by node
   if (typeof require !== "undefined") {
-    require.extensions[".less"] = file => {};
+    require.extensions[".less"] = (file) => {};
   }
 
   return withLess({
     lessLoaderOptions: {
       javascriptEnabled: true,
-      modifyVars: themeVariables // make your antd custom effective
+      modifyVars: themeVariables, // make your antd custom effective
     },
     webpack: (config, { dev }) => {
       config.plugins = config.plugins || [];
@@ -31,11 +31,11 @@ module.exports = () => {
         // Read the .env file
         new Dotenv({
           path: path.join(__dirname, ".env"),
-          systemvars: true
-        })
+          systemvars: true,
+        }),
       ];
 
       return config;
-    }
+    },
   });
 };

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const AboutPage = () => {
-  return <div>I'm about page</div>;
+  return <div>AboutPage</div>;
 };
 
-export default AboutPage;
+export { AboutPage as default };
